@@ -1,41 +1,53 @@
+
 import { useState } from "react";
 import { Play, Heart, MoreHorizontal, Shuffle, SkipBack, SkipForward, Repeat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentTrack, setCurrentTrack] = useState("");
-  const tracks = [{
-    id: 1,
-    title: "First Date, First Delay (Acoustic)",
-    duration: "3:24",
-    plays: "1,234,567"
-  }, {
-    id: 2,
-    title: "Traffic Was Worth It (Ft. Your Smile)",
-    duration: "4:12",
-    plays: "987,654"
-  }, {
-    id: 3,
-    title: "She Asked, I Spoofed (Interlude)",
-    duration: "2:45",
-    plays: "756,432"
-  }, {
-    id: 4,
-    title: "You Got Me Typing Too Much",
-    duration: "3:56",
-    plays: "543,210"
-  }, {
-    id: 5,
-    title: "Softer When You Laugh",
-    duration: "4:33",
-    plays: "432,109"
-  }];
+
+  const tracks = [
+    {
+      id: 1,
+      title: "Midnight Coffee Dreams",
+      duration: "3:24",
+      plays: "1,234,567"
+    },
+    {
+      id: 2,
+      title: "Digital Heart (Ft. Your Voice)",
+      duration: "4:12",
+      plays: "987,654"
+    },
+    {
+      id: 3,
+      title: "Lost in Translation (Interlude)",
+      duration: "2:45",
+      plays: "756,432"
+    },
+    {
+      id: 4,
+      title: "Echoes of Tomorrow",
+      duration: "3:56",
+      plays: "543,210"
+    },
+    {
+      id: 5,
+      title: "Whispers in the Rain",
+      duration: "4:33",
+      plays: "432,109"
+    }
+  ];
+
   const handlePlay = (trackTitle: string) => {
     setCurrentTrack(trackTitle);
     setShowModal(true);
   };
-  return <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-black text-white">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-black text-white">
       {/* Header */}
       <header className="flex items-center justify-between p-4 md:p-6">
         <h1 className="text-2xl font-bold text-green-400">Spotify</h1>
@@ -51,20 +63,24 @@ const Index = () => {
           <div className="w-60 h-60 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg shadow-2xl flex items-center justify-center flex-shrink-0">
             <div className="text-center">
               <div className="text-6xl mb-2">🎵</div>
-              <div className="text-sm font-semibold">Wrapp3r</div>
-              <div className="text-xs">THE LATE TEXTS</div>
+              <div className="text-sm font-semibold">Luna Echo</div>
+              <div className="text-xs">NEON NIGHTS</div>
             </div>
           </div>
 
           {/* Artist Info */}
           <div className="flex-1">
             <p className="text-sm text-gray-300 mb-2">Artist</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Wrapp3r</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Luna Echo</h1>
             <p className="text-gray-300 mb-6">2.1M monthly listeners</p>
             
             {/* Play Controls */}
             <div className="flex items-center gap-4 mb-6">
-              <Button size="lg" className="bg-green-500 hover:bg-green-400 text-black rounded-full w-14 h-14" onClick={() => handlePlay("Random Track")}>
+              <Button 
+                size="lg" 
+                className="bg-green-500 hover:bg-green-400 text-black rounded-full w-14 h-14" 
+                onClick={() => handlePlay("Random Track")}
+              >
                 <Play className="w-6 h-6 ml-1" fill="currentColor" />
               </Button>
               <Button variant="ghost" size="lg">
@@ -80,23 +96,36 @@ const Index = () => {
         {/* About Section */}
         <div className="mb-8 p-6 bg-black/30 rounded-lg backdrop-blur-sm">
           <h3 className="text-xl font-semibold mb-3">About the Artist</h3>
-          <p className="text-gray-300 leading-relaxed">Wrapp3r whose real name is Adams, is a Hiphop artist based in Kenya. He does music that inspires and bless the community. On the side he is an amazing guy who loves meeting new people and building meaningful connections. Hip hop just got better</p>
+          <p className="text-gray-300 leading-relaxed">
+            Luna Echo is an electronic music artist who creates atmospheric soundscapes that blend ambient textures with modern beats. 
+            Based in the digital realm, Luna Echo crafts music that resonates with late-night dreamers and urban explorers. 
+            Each track tells a story of connection in our disconnected world.
+          </p>
         </div>
 
         {/* Popular Tracks */}
         <div>
           <h2 className="text-2xl font-bold mb-6">Popular</h2>
           <div className="space-y-2">
-            {tracks.map((track, index) => <div key={track.id} className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors group">
+            {tracks.map((track, index) => (
+              <div 
+                key={track.id} 
+                className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors group"
+              >
                 <span className="text-gray-400 w-4 text-right">{index + 1}</span>
                 
-                <Button variant="ghost" size="sm" className="w-10 h-10 rounded-full bg-transparent hover:bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" onClick={() => handlePlay(track.title)}>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="w-10 h-10 rounded-full bg-transparent hover:bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" 
+                  onClick={() => handlePlay(track.title)}
+                >
                   <Play className="w-4 h-4" fill="currentColor" />
                 </Button>
 
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{track.title}</p>
-                  <p className="text-sm text-gray-400">Adams & The Late Texts</p>
+                  <p className="text-sm text-gray-400">Luna Echo & The Neon Nights</p>
                 </div>
 
                 <div className="hidden md:block text-sm text-gray-400">
@@ -110,7 +139,8 @@ const Index = () => {
                 <Button variant="ghost" size="sm">
                   <Heart className="w-4 h-4" />
                 </Button>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -123,7 +153,7 @@ const Index = () => {
               </div>
               <div>
                 <p className="text-sm font-medium">Ready to play...</p>
-                <p className="text-xs text-gray-400">Adams & The Late Texts</p>
+                <p className="text-xs text-gray-400">Luna Echo & The Neon Nights</p>
               </div>
             </div>
 
@@ -134,7 +164,11 @@ const Index = () => {
               <Button variant="ghost" size="sm">
                 <SkipBack className="w-5 h-5" />
               </Button>
-              <Button size="sm" className="bg-white text-black hover:bg-gray-200 rounded-full w-8 h-8" onClick={() => handlePlay("Player Control")}>
+              <Button 
+                size="sm" 
+                className="bg-white text-black hover:bg-gray-200 rounded-full w-8 h-8" 
+                onClick={() => handlePlay("Player Control")}
+              >
                 <Play className="w-4 h-4" fill="currentColor" />
               </Button>
               <Button variant="ghost" size="sm">
@@ -157,15 +191,22 @@ const Index = () => {
         <DialogContent className="bg-gray-900 border-gray-700 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-center text-xl">🎵 Plot Twist! 🎵</DialogTitle>
-            <DialogDescription className="text-center text-gray-300 text-base leading-relaxed pt-4">Okay, okay… I was just kidding. 😉</DialogDescription>
+            <DialogDescription className="text-center text-gray-300 text-base leading-relaxed pt-4">
+              Okay, okay… I was just kidding. 😉
+            </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center pt-4">
-            <Button onClick={() => setShowModal(false)} className="bg-green-500 hover:bg-green-400 text-black">
+            <Button 
+              onClick={() => setShowModal(false)} 
+              className="bg-green-500 hover:bg-green-400 text-black"
+            >
               That's actually sweet 💚
             </Button>
           </div>
         </DialogContent>
       </Dialog>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
