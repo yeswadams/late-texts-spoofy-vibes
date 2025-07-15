@@ -63,7 +63,7 @@ const Index = () => {
           <div className="w-60 h-60 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg shadow-2xl flex items-center justify-center flex-shrink-0">
             <div className="text-center">
               <div className="text-6xl mb-2">🎵</div>
-              <div className="text-sm font-semibold">Luna Echo</div>
+              <div className="text-sm font-semibold">Adam</div>
               <div className="text-xs">NEON NIGHTS</div>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Index = () => {
           {/* Artist Info */}
           <div className="flex-1">
             <p className="text-sm text-gray-300 mb-2">Artist</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Luna Echo</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Adam</h1>
             <p className="text-gray-300 mb-6">2.1M monthly listeners</p>
             
             {/* Play Controls */}
@@ -97,8 +97,8 @@ const Index = () => {
         <div className="mb-8 p-6 bg-black/30 rounded-lg backdrop-blur-sm">
           <h3 className="text-xl font-semibold mb-3">About the Artist</h3>
           <p className="text-gray-300 leading-relaxed">
-            Luna Echo is an electronic music artist who creates atmospheric soundscapes that blend ambient textures with modern beats. 
-            Based in the digital realm, Luna Echo crafts music that resonates with late-night dreamers and urban explorers. 
+            Adam is an electronic music artist who creates atmospheric soundscapes that blend ambient textures with modern beats. 
+            Based in the digital realm, Adam crafts music that resonates with late-night dreamers and urban explorers. 
             Each track tells a story of connection in our disconnected world.
           </p>
         </div>
@@ -125,7 +125,7 @@ const Index = () => {
 
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{track.title}</p>
-                  <p className="text-sm text-gray-400">Luna Echo & The Neon Nights</p>
+                  <p className="text-sm text-gray-400">Adam & The Neon Nights</p>
                 </div>
 
                 <div className="hidden md:block text-sm text-gray-400">
@@ -153,7 +153,7 @@ const Index = () => {
               </div>
               <div>
                 <p className="text-sm font-medium">Ready to play...</p>
-                <p className="text-xs text-gray-400">Luna Echo & The Neon Nights</p>
+                <p className="text-xs text-gray-400">Adam & The Neon Nights</p>
               </div>
             </div>
 
