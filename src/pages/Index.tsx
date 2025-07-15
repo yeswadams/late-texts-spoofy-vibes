@@ -1,28 +1,41 @@
-
 import { useState } from "react";
 import { Play, Heart, MoreHorizontal, Shuffle, SkipBack, SkipForward, Repeat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentTrack, setCurrentTrack] = useState("");
-
-  const tracks = [
-    { id: 1, title: "First Date, First Delay (Acoustic)", duration: "3:24", plays: "1,234,567" },
-    { id: 2, title: "Traffic Was Worth It (Ft. Your Smile)", duration: "4:12", plays: "987,654" },
-    { id: 3, title: "She Asked, I Spoofed (Interlude)", duration: "2:45", plays: "756,432" },
-    { id: 4, title: "You Got Me Typing Too Much", duration: "3:56", plays: "543,210" },
-    { id: 5, title: "Softer When You Laugh", duration: "4:33", plays: "432,109" },
-  ];
-
+  const tracks = [{
+    id: 1,
+    title: "First Date, First Delay (Acoustic)",
+    duration: "3:24",
+    plays: "1,234,567"
+  }, {
+    id: 2,
+    title: "Traffic Was Worth It (Ft. Your Smile)",
+    duration: "4:12",
+    plays: "987,654"
+  }, {
+    id: 3,
+    title: "She Asked, I Spoofed (Interlude)",
+    duration: "2:45",
+    plays: "756,432"
+  }, {
+    id: 4,
+    title: "You Got Me Typing Too Much",
+    duration: "3:56",
+    plays: "543,210"
+  }, {
+    id: 5,
+    title: "Softer When You Laugh",
+    duration: "4:33",
+    plays: "432,109"
+  }];
   const handlePlay = (trackTitle: string) => {
     setCurrentTrack(trackTitle);
     setShowModal(true);
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-black text-white">
+  return <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-black text-white">
       {/* Header */}
       <header className="flex items-center justify-between p-4 md:p-6">
         <h1 className="text-2xl font-bold text-green-400">Spoofy by Adams</h1>
@@ -51,11 +64,7 @@ const Index = () => {
             
             {/* Play Controls */}
             <div className="flex items-center gap-4 mb-6">
-              <Button 
-                size="lg" 
-                className="bg-green-500 hover:bg-green-400 text-black rounded-full w-14 h-14"
-                onClick={() => handlePlay("Random Track")}
-              >
+              <Button size="lg" className="bg-green-500 hover:bg-green-400 text-black rounded-full w-14 h-14" onClick={() => handlePlay("Random Track")}>
                 <Play className="w-6 h-6 ml-1" fill="currentColor" />
               </Button>
               <Button variant="ghost" size="lg">
@@ -82,19 +91,10 @@ const Index = () => {
         <div>
           <h2 className="text-2xl font-bold mb-6">Popular</h2>
           <div className="space-y-2">
-            {tracks.map((track, index) => (
-              <div 
-                key={track.id} 
-                className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors group"
-              >
+            {tracks.map((track, index) => <div key={track.id} className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors group">
                 <span className="text-gray-400 w-4 text-right">{index + 1}</span>
                 
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="w-10 h-10 rounded-full bg-transparent hover:bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"
-                  onClick={() => handlePlay(track.title)}
-                >
+                <Button variant="ghost" size="sm" className="w-10 h-10 rounded-full bg-transparent hover:bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" onClick={() => handlePlay(track.title)}>
                   <Play className="w-4 h-4" fill="currentColor" />
                 </Button>
 
@@ -114,8 +114,7 @@ const Index = () => {
                 <Button variant="ghost" size="sm">
                   <Heart className="w-4 h-4" />
                 </Button>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
@@ -139,11 +138,7 @@ const Index = () => {
               <Button variant="ghost" size="sm">
                 <SkipBack className="w-5 h-5" />
               </Button>
-              <Button 
-                size="sm" 
-                className="bg-white text-black hover:bg-gray-200 rounded-full w-8 h-8"
-                onClick={() => handlePlay("Player Control")}
-              >
+              <Button size="sm" className="bg-white text-black hover:bg-gray-200 rounded-full w-8 h-8" onClick={() => handlePlay("Player Control")}>
                 <Play className="w-4 h-4" fill="currentColor" />
               </Button>
               <Button variant="ghost" size="sm">
@@ -166,22 +161,15 @@ const Index = () => {
         <DialogContent className="bg-gray-900 border-gray-700 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-center text-xl">🎵 Plot Twist! 🎵</DialogTitle>
-            <DialogDescription className="text-center text-gray-300 text-base leading-relaxed pt-4">
-              Okay, okay… I was just kidding. But if I was an artist, this track would've been about you. 😉
-            </DialogDescription>
+            <DialogDescription className="text-center text-gray-300 text-base leading-relaxed pt-4">Okay, okay… I was just kidding. 😉</DialogDescription>
           </DialogHeader>
           <div className="flex justify-center pt-4">
-            <Button 
-              onClick={() => setShowModal(false)}
-              className="bg-green-500 hover:bg-green-400 text-black"
-            >
+            <Button onClick={() => setShowModal(false)} className="bg-green-500 hover:bg-green-400 text-black">
               That's actually sweet 💚
             </Button>
           </div>
         </DialogContent>
       </Dialog>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
