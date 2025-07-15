@@ -38,7 +38,7 @@ const Index = () => {
   return <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-black text-white">
       {/* Header */}
       <header className="flex items-center justify-between p-4 md:p-6">
-        <h1 className="text-2xl font-bold text-green-400">Spoofy by Adams</h1>
+        <h1 className="text-2xl font-bold text-green-400">Spotify</h1>
         <Button variant="outline" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black">
           Follow
         </Button>
