@@ -51,7 +51,7 @@ const Index = () => {
           <div className="w-60 h-60 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg shadow-2xl flex items-center justify-center flex-shrink-0">
             <div className="text-center">
               <div className="text-6xl mb-2">🎵</div>
-              <div className="text-sm font-semibold">ADAMS &</div>
+              <div className="text-sm font-semibold">Wrapp3r</div>
               <div className="text-xs">THE LATE TEXTS</div>
             </div>
           </div>
