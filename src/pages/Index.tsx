@@ -59,7 +59,7 @@ const Index = () => {
           {/* Artist Info */}
           <div className="flex-1">
             <p className="text-sm text-gray-300 mb-2">Artist</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Adams & The Late Texts</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Wrapp3r</h1>
             <p className="text-gray-300 mb-6">2.1M monthly listeners</p>
             
             {/* Play Controls */}
@@ -80,11 +80,7 @@ const Index = () => {
         {/* About Section */}
         <div className="mb-8 p-6 bg-black/30 rounded-lg backdrop-blur-sm">
           <h3 className="text-xl font-semibold mb-3">About the Artist</h3>
-          <p className="text-gray-300 leading-relaxed">
-            Adams doesn't drop bars—but he drops energy. Inspired by delayed dates, great convos, 
-            and the occasional smooth lie. When he's not crafting the perfect text response, 
-            he's turning life's awkward moments into unexpectedly sweet melodies.
-          </p>
+          <p className="text-gray-300 leading-relaxed">Wrapp3r whose real name is Adams, is a Hiphop artist based in Kenya. He does music that inspires and bless the community. On the side he is an amazing guy who loves meeting new people and building meaningful connections. Hip hop just got better</p>
         </div>
 
         {/* Popular Tracks */}
